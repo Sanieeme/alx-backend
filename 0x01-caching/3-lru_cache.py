@@ -15,7 +15,7 @@ class LRUCache(BaseCaching):
         """method that assigns dictionary
         """
         if key is None or item is None:
-                return
+            return
 
         if key in self.cache_data:
             self.cache_data.move_to_end(key)

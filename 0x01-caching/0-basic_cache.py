@@ -3,7 +3,6 @@
 from base_caching import BaseCaching
 
 
-
 class BasicCache(BaseCaching):
     """class BasicCache that inherits from BaseCaching"""
     def __init__(self):
@@ -16,7 +15,7 @@ class BasicCache(BaseCaching):
         """
         self.cache_data[key] = item
         if key is None or item is None:
-                return
+            return
 
     def get(self, key):
         """

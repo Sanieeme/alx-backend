@@ -15,9 +15,9 @@ class FIFOCache(BaseCaching):
         """method that assigns dictionary
         """
         if key is None or item is None:
-                return
+            return
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            discard_key, _ = self.cache_data.popitem(last=False) 
+            discard_key, _ = self.cache_data.popitem(last=False)
             print("Discard: {}". format(discard_key))
         self.cache_data[key] = item
 

@@ -15,7 +15,7 @@ class LIFOCache(BaseCaching):
         """method that assigns dictionary
         """
         if key is None or item is None:
-                return
+            return
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             discard_key, _ = self.cache_data.popitem(last=True)
             print("Discard: {}". format(discard_key))
