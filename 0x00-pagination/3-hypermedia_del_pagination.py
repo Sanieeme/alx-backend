@@ -6,6 +6,7 @@ import csv
 import math
 from typing import List, Dict, Optional
 
+
 class Server:
     """Server class to paginate a database of popular baby names.
     """
@@ -37,29 +38,28 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: Optional[int] = None, page_size: int = 10) -> Dict:
-       """returns a dictionary
-       """
-       assert isinstance(index, (int, type(None))), "Error"
-       assert isinstance(page_size, int) and page_size > 0, "Error"
-       
-       if index is None:
-           index = 0
-       else:
-           assert 0 <= index < len(self.dataset()), "Index out of range"
-           
-       data_length = len(self.dataset())
-       data = []
-       next_index = index
+        """returns a dictionary
+        """
+        assert isinstance(index, (int, type(None))), "Error"
+        assert isinstance(page_size, int) and page_size > 0, "Error"
 
-       while len(data) < page_size and next_index < data_length:
-           if self.dataset()[next_index] is not None:
-               data.append(self.dataset()[next_index])
-               next_index += 1
-               
-       result = {
-               'index': index,
-               'next_index': next_index,
-               'page_size': page_size,
-               'data': data
-               }
-       return result
+        if index is None:
+            index = 0
+        else:
+            assert 0 <= index < len(self.dataset()), "Index out of range"
+        data_length = len(self.dataset())
+        data = []
+        next_index = index
+
+        while len(data) < page_size and next_index < data_length:
+            if self.dataset()[next_index] is not None:
+                data.append(self.dataset()[next_index])
+            next_index += 1
+
+            result = {
+                    'index': index,
+                    'next_index': next_index,
+                    'page_size': page_size,
+                    'data': data
+                    }
+            return result
