@@ -42,6 +42,7 @@ class Server:
             return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """ method that get page"""
         if not isinstance(page, int) or not isinstance(page_size, int):
             raise AssertionError("Error")
         if page <= 0 or page_size <= 0:

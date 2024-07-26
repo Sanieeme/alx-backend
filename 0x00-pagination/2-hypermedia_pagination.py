@@ -43,7 +43,7 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-        function
+        method that get page
         """
         if not isinstance(page, int) or not isinstance(page_size, int):
             raise AssertionError("Error")
@@ -62,7 +62,7 @@ class Server:
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
         """
-        function
+        method that returns dictionary
         """
         if not isinstance(page, int) or not isinstance(page_size, int):
             raise AssertionError("Error")
